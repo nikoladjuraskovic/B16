@@ -1,0 +1,98 @@
+﻿@model IEnumerable<B16v1.Models.Raspored>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*
+    @model B16v1.Models.Raspored
+    /*ovo ne stavljamo jer hocemo da ispisemo sve podatke, tj. da prodjemo kroz sve njih.
+    Nasa kolekcija modela tj. Raspored-a je takva da se kroz nju ne moze odmah iterirati(proci kroz nju).
+    Da bismo to uradili, moramo dodati da nas model implementira IEnumerable interfejs.
+    IEnumerable interfejs sadrzi apstraktne metode za iteriranje(enumerisanje) kroz neku kolekciju.
+    Intefrejsi:
+    https://www.w3schools.com/cs/cs_interface.php
+    https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/interface
+
+    IEnumerable interface: https://www.c-sharpcorner.com/UploadFile/0c1bb2/ienumerable-interface-in-C-Sharp/#:~:text=What%20is%20IEnumerable%20in%20C,with%20a%20for%2Deach%20statement.
+    https://learn.microsoft.com/en-us/dotnet/api/system.collections.ienumerable?view=netframework-4.8
+*@
+
+
+
+
+
+<h1>Raspored časova: @ViewBag.FileName</h1>
+
+
+@*
+    <table class="table">
+
+        @foreach (var item in Model)
+        {
+
+
+            <tr>
+
+                <td>@Html.DisplayFor(modelItem => item.Rbr)</td>
+
+                <td>@Html.DisplayFor(modelItem => item.DanUNedelji)</td>
+
+                <td>@Html.DisplayFor(modelItem => item.Predmet)</td>
+
+            </tr>
+
+        }
+
+    </table>
+
+*@
+
+<hr />
+
+<table class="table">
+
+    <tr>
+
+        <th>Rbr</th>
+        <th>Ponedeljak</th>
+        <th>Utorak</th>
+        <th>Sreda</th>
+        <th>Četvrtak</th>
+        <th>Petak</th>
+
+
+    </tr>
+    <!--Mozemo ici na svakih 5 jer se to odnosi na broj radnih dana u nedelji koji su nepromenljivi.-->
+    @*
+        IEnumerable Element At
+        https://learn.microsoft.com/en-us/dotnet/api/system.linq.enumerable.elementat?view=netframework-4.8
+
+        IEnumerable OrderBy metod:
+        https://learn.microsoft.com/en-us/dotnet/api/system.linq.enumerable.orderby?redirectedfrom=MSDN&view=netframework-4.8#System_Linq_Enumerable_OrderBy__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__
+    *@
+
+    @for (int i = 0; i < Model.Count(); i += 5)
+    {
+
+        <tr>
+
+            <td>@Model.ElementAt(i).Rbr</td>
+            <td>@Model.ElementAt(i).Predmet</td>
+            <td>@Model.ElementAt(i + 1).Predmet</td>
+            <td>@Model.ElementAt(i + 2).Predmet</td>
+            <td>@Model.ElementAt(i + 3).Predmet</td>
+            <td>@Model.ElementAt(i + 4).Predmet</td>
+
+
+        </tr>
+
+
+
+    }
+
+
+
+
+
+</table>
