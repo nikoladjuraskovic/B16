@@ -46,9 +46,9 @@ Za sada, imamo samo prva 3 casa napisana po danu.-->
 	<Raspored>
 		<Rbr>6</Rbr>
 
-		<DanUNedelji>Preduzetnistvo</DanUNedelji>
+		<DanUNedelji>Ponedeljak</DanUNedelji>
 
-		<Predmet>Zastita informacionih Sistema</Predmet>
+		<Predmet>Preduzetnistvo</Predmet>
 
 	</Raspored>
 	<Raspored>
@@ -112,7 +112,7 @@ Za sada, imamo samo prva 3 casa napisana po danu.-->
 
 		<DanUNedelji>Utorak</DanUNedelji>
 
-		<Predmet>>Matematika</Predmet>
+		<Predmet>Matematika</Predmet>
 
 	</Raspored>
 	<Raspored>

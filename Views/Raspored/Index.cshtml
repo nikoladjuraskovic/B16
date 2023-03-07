@@ -2,6 +2,8 @@
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+
 }
 
 @*
@@ -19,10 +21,17 @@
 *@
 
 
+@{
+    /*
+    B16v1.Models.RasporedDbContext rasporedKlasa = new B16v1.Models.RasporedDbContext();
+    rasporedKlasa.Rasporedi_List;
+
+    preko Liste...(nije dobra praksa)
+        */
+}
 
 
-
-<h1>Raspored časova: @ViewBag.FileName</h1>
+<h1>Raspored časova</h1>
 
 
 @*
@@ -62,7 +71,8 @@
         <th>Petak</th>
 
 
-    </tr>
+  
+      </tr>
     <!--Mozemo ici na svakih 5 jer se to odnosi na broj radnih dana u nedelji koji su nepromenljivi.-->
     @*
         IEnumerable Element At
@@ -87,12 +97,8 @@
 
         </tr>
 
-
-
     }
 
-
-
-
+ 
 
 </table>

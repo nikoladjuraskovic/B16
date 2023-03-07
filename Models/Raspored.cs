@@ -25,7 +25,9 @@ namespace B16v1.Models
         [Key]  
         public int Id { get; set; }
         public int Rbr { get; set; }      
-        public string DanUNedelji { get; set;}
+       // public string DanUNedelji { get; set;}
+       /*TODO DanUNedelji da bude tipa string*/
+        public int DanUNedelji { get; set; }
         public string Predmet { get; set; }
     }
 
