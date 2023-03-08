@@ -7,20 +7,22 @@
 
 <br />
 
+<h5>XML datoteka</h5>
 
+<br />
+<br />
 
-<br />
-<br />
-<br />
 
 @*input tipa fajl za izbor fajla stilizujemo bootstrap klasama najblize sto mozemo dizajnu,
     alternativa je css kod.*@
 @*Ovu stranicu smo postavili kao pocetnu na sledeci nacin:
     https://social.msdn.microsoft.com/Forums/en-US/54f183ae-cf3b-439c-84d0-603e2be5a100/how-to-set-startup-page-with-area-in-aspnet-mvc-4?forum=aspmvc*@
 
-<form action="/Raspored" method="get">
+@*Koristicemo HTTP metod POST za slanje fajla serveru jer ga onda kasnije dohvatamo lako pomocu Request objekta*@
 
-    <input id="FileInput" type="file" value="Izaberi" title="Izaberi" class="btn btn-outline-dark" />
+<form action="/Raspored" method="post">
+
+    <input id="FileInput" type="file" value="Izaberi" name="fileName" title="Izaberi" class="btn btn-outline-dark" />
 
     <!--TODO: Kako submit-ovati putem HTML forme ime .xml selektovanog fajla.
 
@@ -29,6 +31,9 @@
         https://www.slimframework.com/docs/v4/cookbook/uploading-files.html
 
         -->
+
+    <br />
+    <br />
 
     <input type="submit" name="submit" value="Učitaj" class="btn btn-outline-dark" />
 

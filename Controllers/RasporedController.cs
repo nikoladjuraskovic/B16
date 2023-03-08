@@ -53,7 +53,26 @@ namespace B16v1.Controllers
              
              */
 
-            string filePath = Server.MapPath("~/App_Data" + "/raspored.xml");
+            /*Dohvatanje imena stranica fajla samo ako je Raspored stranica ucitana HTTP metodom POST tj.
+             * ako je korisnik putem html forme presao na narednu stranicu(kliknuo submit dugme)*/
+            string imeFajla;
+
+            if (Request.HttpMethod == "POST")
+            {
+                imeFajla = Request.Form["fileName"].Trim();
+            }
+            else
+            {
+                /*ako je metod GET tj. stranica ucitana klikom na link iz navbara, onda po defualt-u ucitati datoteku da ne
+                 * bismo imali Exception, gresku*/
+                imeFajla = "raspored.xml";
+            }
+
+
+            //System.Diagnostics.Debug.WriteLine("IMe ucitanog fajla: "  + imeFajla);
+
+            //string filePath = Server.MapPath("~/App_Data" + "/raspored.xml");
+            string filePath = Server.MapPath("~/App_Data/" + imeFajla);
 
             /*brisemo podatke iz baze da bi svaki put bio ispisan samo sadrzaj XML file-a
              * tj. da se podaci u bazi i DbSet-u nebi duplirali
