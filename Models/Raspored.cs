@@ -15,7 +15,7 @@ namespace B16v1.Models
          imacemo ili gresku ili pogresan ispis na veb strani. Zato treba dodati id koji se ne ispisuje.
         Ako naknadno to uradimo tj. izmenimo model, onda se on ne poklapa sa bazom koja ce se napraviti
         pri pokretanju aplikacije i onda postoje 2 resenja problema:
-        1. obrisati bazu, i opet pokrenuti aplikaciju
+        1. obrisati bazu, i opet pokrenuti aplikaciju(preporuka jer je lakse i brze)
         2. code first migrations pristupom azurirati bazu izmenjenim modelom
         
          https://stackoverflow.com/questions/20203492/entitytype-has-no-key-defined-error
