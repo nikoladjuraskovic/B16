@@ -10,6 +10,7 @@ using System.Xml;
 
 namespace B16v1.Controllers
 {
+    
     public class RasporedController : Controller
     {
         //Kontroler je dodat rucno kao MVC 5 Controller - Empty
@@ -37,8 +38,9 @@ namespace B16v1.Controllers
         }
 
         private RasporedDbContext db = new RasporedDbContext();
-     
-       // GET: Raspored
+
+        // GET: Raspored
+        [HandleError(View="~/Views/Shared/Error.cshtml")]
         public ActionResult Index(string fileName)
         {
            
@@ -73,6 +75,13 @@ namespace B16v1.Controllers
 
             //string filePath = Server.MapPath("~/App_Data" + "/raspored.xml");
             string filePath = Server.MapPath("~/App_Data/" + imeFajla);
+
+
+            /*ako korisnik klikne button za ucitavanje xml fajla a ne izabere xml fajl, onda postavi raspored.xml kao default fajl.
+             TODO: Bolji nacin je obrada izuzetaka...
+             */
+            if (filePath.EndsWith(".xml") == false) 
+                filePath = Server.MapPath("~/App_Data/raspored.xml");
 
             /*brisemo podatke iz baze da bi svaki put bio ispisan samo sadrzaj XML file-a
              * tj. da se podaci u bazi i DbSet-u nebi duplirali

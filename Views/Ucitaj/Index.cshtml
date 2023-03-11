@@ -6,12 +6,6 @@
 
 <h1>Učitaj XML fajl</h1>
 
-<br />
-
-<p id="p">XML datoteka</p>
-
-<br />
-<br />
 
 
 @*input tipa fajl za izbor fajla stilizujemo bootstrap klasama najblize sto mozemo dizajnu,
@@ -24,17 +18,29 @@
     https://stackoverflow.com/questions/6439926/getting-the-name-of-file-just-uploaded-in-html-file-input-type
         https://www.slimframework.com/docs/v4/cookbook/uploading-files.html
 
-
+    Stilizovanje input type="file" preko label:
+    https://stackoverflow.com/questions/5813344/how-to-customize-input-type-file
 *@
 
 <form action="/Raspored" method="post">
 
-    <input id="FileInput" type="file" value="Izaberi" name="fileName" title="Izaberi" class="btn btn-outline-dark" />
+    <p id="p">&emsp; XML datoteka</p>
+
+    <div id="label_space">
+        <!--u label i input type="submit" se mogu umesto dugme klase staviti bootstrap klase btn btn-outline-dark
+        Custom stilizovanje inputa:
+        https://www.w3schools.com/howto/howto_css_outline_buttons.asp
+
+        -->
+        <label for="FileInput" class="dugme">Izaberi</label>
+
+    </div>
+    <input id="FileInput" type="file" value="Izaberi" name="fileName" title="Izaberi" class="" style="display: none" />
 
 
     <br />
     <br />
 
-    <input type="submit" name="submit" value="Učitaj" class="btn btn-outline-dark" />
+    <input type="submit" name="submit" value="Učitaj" class="dugme" />
 
 </form>
