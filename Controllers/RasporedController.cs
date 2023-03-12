@@ -39,8 +39,7 @@ namespace B16v1.Controllers
 
         private RasporedDbContext db = new RasporedDbContext();
 
-        // GET: Raspored
-        [HandleError(View="~/Views/Shared/Error.cshtml")]
+        // GET: Raspored        
         public ActionResult Index(string fileName)
         {
            
