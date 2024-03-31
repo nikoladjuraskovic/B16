@@ -43,9 +43,6 @@ namespace B16v1.Models
     public class RasporedDbContext : DbContext
     { 
         public DbSet<Raspored> Rasporedi { get; set; }
-
-        /*ovo nije praksa u MVC-u ali jeste jedan nacin ako ne znate bolji tj. preko DbSet a to su liste:*/
-        public List<Raspored> Rasporedi_List { get; set; }
-
+           
     }
 }

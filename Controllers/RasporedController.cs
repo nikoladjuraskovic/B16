@@ -43,7 +43,7 @@ namespace B16v1.Controllers
         public ActionResult Index(string fileName)
         {
            
-            db.Rasporedi_List = new List<Raspored>();
+            
 
 
             /*Ako budete imali problem sa pravima pristupa xml fajlu, onda:
@@ -133,7 +133,7 @@ namespace B16v1.Controllers
                                 //System.Diagnostics.Debug.WriteLine("Redni Broj: " + raspored.Rbr);
                                 db.Rasporedi.Add(raspored);
                                 
-                                db.Rasporedi_List.Add(raspored);
+                                
                             }
 
                             break;
